@@ -4,7 +4,8 @@ function GuessInput({ handleNewSubmit }) {
   const [potentialGuess, setPotentialGuess] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleNewSubmit(potentialGuess);
+    if (potentialGuess.length < 5) return;
+    handleNewSubmit(potentialGuess, potentialGuess);
     setPotentialGuess("");
   };
   return (
